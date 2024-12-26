@@ -1,0 +1,325 @@
+html {
+    --dimensiune-text: 18px;
+    font-size: var(--dimensiune-text);
+    transition: all 0.5s linear;
+    font-family: "Lora", serif;
+    --text-shadow: 0.0556rem 0.0556rem 0.1111rem rgba(0, 0, 0, 0.2); /* 1px 1px 2px to rem */
+}
+
+body {
+    --spatiere--pagina: 100px;
+    padding-left: var(--spatiere--pagina);
+    padding-right: var(--spatiere--pagina);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header, footer {
+    --spatiere--extreme: 0.9375rem; /* 15px to rem */
+    padding-left: var(--spatiere--extreme);
+    padding-right: var(--spatiere--extreme);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+header {
+    background-color: var(--primary-color);
+}
+
+footer {
+    background-color: var(--secondary-color-1);
+}
+
+footer p:first-child {
+    margin-top: 0;
+}
+
+nav ul li a {
+    color: var(--text-color);
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color-4);
+}
+
+
+/* Grid */
+#grid-pagina {
+    --grid-gap: 1.25rem; /* 20px to rem */
+    display: grid;
+    grid-template-areas: "zona-unu zona-unu zona-unu zona-unu"
+                         "zona-doi zona-doi zona-trei zona-trei"
+                         "zona-doi zona-doi zona-patru zona-patru"
+                         "zona-cinci zona-sase zona-sase zona-sapte"
+                         "zona-opt zona-opt zona-opt zona-opt";
+    grid-gap: var(--grid-gap);
+    padding-top: var(--grid-gap);
+    padding-bottom: var(--grid-gap);
+}
+
+#grid-pagina > * {
+    margin: 0;
+    background-color: var(--secondary-color-2);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+#produse {
+    grid-area: zona-unu;
+}
+
+#materiale {
+    grid-area: zona-doi;
+}
+
+#calendar {
+    grid-area: zona-trei;
+}
+
+#anunturi {
+    grid-area: zona-patru;
+}
+
+#utilizatori {
+    grid-area: zona-cinci;
+}
+
+#statistici {
+    grid-area: zona-sase;
+}
+
+#server {
+    grid-area: zona-sapte;
+}
+
+#testimoniale-resurse {
+    grid-area: zona-opt;
+}
+
+#grid-pagina > section {
+    padding-left: 0.9375rem; /* 15px to rem */
+    padding-right: 0.9375rem; /* 15px to rem */
+}
+
+#tab-materiale {
+    caption-side: bottom;
+    background-color: var(--table-background-color);
+    border: 0.2778rem double var(--border-color); /* 5px to rem */
+    border-collapse: collapse;
+}
+
+#tab-materiale th,
+#tab-materiale td {
+    border: 0.0556rem solid var(--border-color); /* 1px to rem */
+    transition: all 0.75s linear;
+}
+
+#tab-materiale th:nth-child(odd),
+#tab-materiale td:nth-child(odd) {
+    color: var(--secondary-color-3);
+    text-shadow: var(--text-shadow);
+}
+
+#tab-materiale th:nth-child(even),
+#tab-materiale td:nth-child(even) {
+    color: var(--secondary-color-4);
+    text-shadow: var(--text-shadow);
+}
+
+#tab-materiale tr:hover th,
+#tab-materiale tr:hover td {
+    background-color: var(--secondary-color-1);
+    color: var(--text-color);
+    border: 0.2778rem solid var(--border-color); /* 5px to rem */
+}
+
+/* Iframe */
+.container-iframe {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.container-iframe iframe {
+    width: 25rem; /* 450px to rem */
+    border: 0.2778rem double var(--secondary-color-3); /* 5px to rem */
+}
+
+.taburi-iframe {
+    display: flex;
+    flex-direction: column;
+}
+
+.taburi-iframe>a {
+    width: 8.3333rem; /* 150px to rem */
+    height: 2.2222rem; /* 40px to rem */
+    line-height: 2.2222rem; /* 40px to rem */
+    text-align: center;
+    border-top: 0.1667rem double var(--secondary-color-3); /* 3px to rem */
+    border-right: 0.1667rem double var(--secondary-color-3); /* 3px to rem */
+    border-bottom: 0.1667rem double var(--secondary-color-3); /* 3px to rem */
+    border-top-right-radius: 0.2778rem; /* 5px to rem */
+    border-bottom-right-radius: 0.2778rem; /* 5px to rem */
+    text-decoration: none;
+    background-color: var(--secondary-color-1);
+    transition: all 0.75s linear;
+}
+
+.taburi-iframe>a:hover {
+    background-color: var(--secondary-color-3);
+    width: 10rem; /* 180px to rem */
+}
+
+/* link top */
+#link-top {
+    position:fixed;
+    bottom:0.3em;
+    opacity:0.5;
+    right:0.3em;
+    width:3rem;
+    box-sizing: border-box;
+    height:3rem;
+    line-height:3rem;
+    text-align:center;
+    border-radius:50%;
+    background: linear-gradient(135deg, var(--secondary-color-1), var(--secondary-color-3), var(--secondary-color-1));
+    transition: opacity 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#link-top::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0.2778rem dashed grey; /* 5px to rem */
+    border-radius: inherit;
+    box-sizing: border-box;
+    transition: transform 0.5s ease;
+}
+
+#link-top:hover{
+    opacity:1;
+}
+
+#link-top:hover::after {
+    animation: spin-border 1s linear;
+}
+
+#link-top:not(:hover)::after {
+    animation: spin-border-reverse 1s linear;
+}
+
+@keyframes spin-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-border-reverse {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* #sageata {
+    position: relative;
+    display: inline-block;
+    font-size: 1.5rem;
+    color: grey;
+} */
+
+#sageata {
+    position: relative;
+    display: inline-block;
+    width: 0.2rem;
+    height: 1.1rem;
+    background-color: grey;
+}
+
+#sageata::before, #sageata::after {
+    content: '';
+    position: absolute;
+    width: 0.7rem;
+    height: 0.1rem;
+    background-color: grey;
+    border-radius: 0.1rem;
+}
+
+#sageata::before {
+    top: 0.1rem;
+    left: -0.6rem;
+    transform: rotate(-30deg);
+}
+
+#sageata::after {
+    top: 0.1rem;
+    right: -0.6rem;
+    transform: rotate(30deg);
+}
+
+/* Math */
+math {
+    font-family: 'Lora', serif;
+}
+
+mi {
+    color: var(--math-color-1);
+    font-style: italic;
+}
+
+mn {
+    color: var(--math-color-2);
+    font-weight: bold;
+}
+
+mo {
+    color: var(--math-color-3);
+}
+
+/* Testimoniale resurse */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+section#testimoniale-resurse {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* 20px to rem */
+    background-color: var(--background-color);
+    box-shadow: none;
+    padding: 0;
+}
+
+#testimoniale, #resurse {
+    background-color: var(--secondary-color-2);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+}  
+     
+#testimoniale figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30%;
+    margin: 0 auto;
+}
+
+#testimoniale img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}

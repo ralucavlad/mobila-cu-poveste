@@ -1,0 +1,34 @@
+html {
+    --dimensiune-text: 12px;
+}
+
+body {
+    --spatiere--pagina: 0px;
+    margin: 0;
+}
+
+header, footer, #grid-pagina > * {
+    border-radius: 0;
+}
+
+#grid-pagina {
+    --grid-gap: 0.4167rem; /* 5px to rem, based on 12px root font size */
+    grid-template-areas: "zona-unu"
+                         "zona-doi"
+                         "zona-trei"
+                         "zona-patru"
+                         "zona-cinci"
+                         "zona-sase"
+                         "zona-sapte"
+                         "zona-opt";
+}
+
+.table-container {
+    overflow-x: auto;
+    max-width: 35rem;
+    box-sizing: border-box;
+}
+
+#tab-materiale {
+    min-width: 58.3333rem; /* 700px to rem, based on 12px root font size */
+}
