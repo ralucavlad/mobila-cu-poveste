@@ -26,6 +26,10 @@
         <link rel="stylesheet" href="resurse/css/general.css" type="text/css" />
         <link rel="stylesheet" href="resurse/css/general1000.css" type="text/css" media="screen and (max-width:1000px)"/>
         <link rel="stylesheet" href="resurse/css/general700.css" type="text/css" media="screen and (max-width:700px)"/>
+        <link rel="stylesheet" href="resurse/css/nav.css" type="text/css" />
+        <link rel="stylesheet" href="resurse/css/nav1000.css" type="text/css" media="screen and (max-width:1000px)"/>        
+        <link rel="stylesheet" href="resurse/css/nav700.css" type="text/css" media="screen and (max-width:700px)"/>
+        <link rel="stylesheet" href="resurse/css/printare.css" type="text/css" />
 
         <style>
             :root {
@@ -34,8 +38,8 @@
                 --secondary-color-2: #F2EBDA;
                 --secondary-color-3: #F2C889;
                 --secondary-color-4: #F2E0DA;
-                --table-background-color: rgb(182, 104, 31);
-                --background-color: #FFFFFF;
+                --strong-color: rgb(45, 38, 34);
+                --white-color: #FFFFFF;
                 --text-color: #000000;
                 --border-color: #CCCCCC;
                 --border-radius: 10px;
@@ -49,36 +53,30 @@
     <body>
         <header>
             <h1>Mobila cu poveste</h1>
+            <p id="watermark">Vlad<br>Raluca</p>
             <nav>
-                <ul>
-                    <li><a href="index.html">Acasă</a>
+                <input id="ch-menu" type="checkbox" style="display: none;">
+                <div class="hamburger-menu-container">
+                    <label for="ch-menu" id="hamburger-menu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </label>
+                </div>
+                <ul class="meniu">
+                    <li><a href="index.html" id="container-acasa"><span class="fas fa-regular fa-house"></span><div id="acasa">Acasa</div></a></li>
+                    <li><a href="despre.html">Despre</a></li>
+                    <li>
+                        <a href="produse.html">Produse</a>
                         <ul>
-                            <li><a href="#produse">Produse</a></li>
-                            <li><a href="#testimoniale">Testimoniale</a></li>
+                            <li><a href="mobila.html">Mobila</a></li>
+                            <li><a href="accesorii.html">Accesorii</a></li>
+                            <li><a href="workshopuri.html#testimoniale">Testimoniale</a></li>
                         </ul>
                     </li>
-                    <li><a href="despre.html">Despre</a></li>
-                    <li><a href="mobila.html">Mobila</a></li>
-                    <li><a href="accesorii.html">Accesorii</a></li>
-                    <li><a href="workshopuri.html">Workshopuri</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#resurse">Resurse</a></li>
                 </ul>
-                <aside>
-                    <h2>Coș de cumpărături</h2>
-                    <article>
-                        <h3>Articol 1</h3>
-                        <p>Descriere articol 1</p>
-                        <p>Preț: 100,00 RON</p>
-                    </article>
-                    <article>
-                        <h3>Articol 2</h3>
-                        <p>Descriere articol 2</p>
-                        <p>Preț: 200,00 RON</p>
-                    </article>
-                    <p>Total: 300,00 RON</p>
-                    <button type="button">Finalizare</button>
-                </aside>
             </nav>
         </header>
         <main>
@@ -324,7 +322,7 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
         
-                        <p>Descărcați <a href="./resurse/documente/ghid.docx" download>ghidul nostru complet</a> pentru mai multe detalii.</p>
+                        <p id="descarcare">Descărcați <a href="./resurse/documente/ghid.docx" download>ghidul nostru complet</a> pentru mai multe detalii.</p>
                     </section>
                 </section>
             </div>    
@@ -338,7 +336,7 @@
             </address>
             <small>&copy; <time datetime="2023-10-29">2023</time> Mobila cu poveste. Toate drepturile rezervate.</small>
             <a href="#" id="link-top" title="Back to the top"><div id="sageata"></div></a>
-            <!-- <a href="#" id="link-top" title="Back to the top"><div id="sageata">&#8593;</div></a> -->
+            <p id="banner-printare">Acesta este un proiect școlar!</p>
         </footer>
     </body>
 </html>

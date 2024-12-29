@@ -1,0 +1,55 @@
+{
+  "name": "mobila-cu-poveste",
+  "description": "Magazin online de mobila reconditionata",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build-scss": "sass scss/:resurse/css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ralucavlad/mobila-cu-poveste.git"
+  },
+  "keywords": [
+    "mobila",
+    "reconditionata",
+    "mobilier",
+    "vechi",
+    "upcycling",
+    "mobilier",
+    "mese",
+    "scaune",
+    "comode",
+    "dulapuri",
+    "bufete",
+    "vitrine",
+    "fotolii",
+    "canapele",
+    "noptiere",
+    "obiecte",
+    "decorative",
+    "lustre",
+    "veioze",
+    "lampi",
+    "rame",
+    "foto",
+    "diy",
+    "workshopuri",
+    "tehnici",
+    "de",
+    "decorare",
+    "pictura",
+    "pe",
+    "lemn"
+  ],
+  "author": "Raluca Vlad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ralucavlad/mobila-cu-poveste/issues"
+  },
+  "homepage": "https://github.com/ralucavlad/mobila-cu-poveste#readme",
+  "dependencies": {
+    "sass": "^1.83.0"
+  }
+}

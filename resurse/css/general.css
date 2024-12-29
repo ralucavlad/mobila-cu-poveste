@@ -10,24 +10,28 @@ body {
     --spatiere--pagina: 100px;
     padding-left: var(--spatiere--pagina);
     padding-right: var(--spatiere--pagina);
-    background-color: var(--background-color);
+    background-color: var(--white-color);
     color: var(--text-color);
 }
 
 header, footer {
     --spatiere--extreme: 0.9375rem; /* 15px to rem */
-    padding-left: var(--spatiere--extreme);
-    padding-right: var(--spatiere--extreme);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
 }
 
 header {
-    background-color: var(--primary-color);
+    background-color: var(--white-color);
+}
+
+header h1 {
+    text-align: center;
 }
 
 footer {
     background-color: var(--secondary-color-1);
+    box-shadow: var(--box-shadow);
+    padding-left: var(--spatiere--extreme);
+    padding-right: var(--spatiere--extreme);
+    border-radius: var(--border-radius);
 }
 
 footer p:first-child {
@@ -103,7 +107,7 @@ nav ul li a:hover {
 
 #tab-materiale {
     caption-side: bottom;
-    background-color: var(--table-background-color);
+    background-color: var(--strong-color);
     border: 0.2778rem double var(--border-color); /* 5px to rem */
     border-collapse: collapse;
 }
@@ -298,7 +302,7 @@ section#testimoniale-resurse {
     display: flex;
     flex-direction: column;
     gap: 1.25rem; /* 20px to rem */
-    background-color: var(--background-color);
+    background-color: var(--white-color);
     box-shadow: none;
     padding: 0;
 }

@@ -1,0 +1,119 @@
+@charset "UTF-8";
+nav {
+  --latime-buton: 130px;
+  --inaltime-buton: 30px;
+  --culoare-deschisa-meniu: var(--secondary-color-3);
+  --culoare-inchisa-meniu: var(--strong-color);
+  --culoare-hover: rgba(255, 255, 255, 0.2);
+  --border-hover: var(--secondary-color-1);
+  --padding-border: 2px;
+  --underline-color: var(--secondary-color-1);
+  background-color: var(--culoare-inchisa-meniu);
+}
+
+ul.meniu {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+ul.meniu #container-acasa {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+ul.meniu #container-acasa .fas {
+  font-size: 15px;
+  line-height: var(--inaltime-buton);
+}
+ul.meniu li a {
+  color: var(--white-color);
+  text-decoration: none;
+}
+ul.meniu ul {
+  padding: 0;
+  padding-bottom: 2px;
+  list-style-type: none;
+  z-index: 3;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%; /* Set width to match parent */
+  background-color: var(--culoare-inchisa-meniu);
+  transform: scale(0);
+  transform-origin: top left;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+ul.meniu ul li a {
+  position: relative; /* Necesara pentru pseudo-element */
+}
+ul.meniu ul li a::after, ul.meniu ul li a::before {
+  content: ""; /* Pseudo-element gol */
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--underline-color);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+ul.meniu ul li a::after {
+  bottom: -4px; /* Poziția primei linii */
+}
+ul.meniu ul li a::before {
+  bottom: 0px; /* Poziția celei de-a doua linii */
+}
+ul.meniu ul li a:hover::after, ul.meniu ul li a:hover::before {
+  opacity: 1;
+}
+ul.meniu > li {
+  border: 1px solid var(--culoare-inchisa-meniu);
+  width: var(--latime-buton);
+  height: var(--inaltime-buton);
+  text-align: center;
+  font-weight: bold;
+  line-height: var(--inaltime-buton);
+  transition: all 0.5s linear;
+  box-sizing: border-box;
+  position: relative;
+}
+ul.meniu > li > a {
+  display: block;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.5s linear;
+  position: relative;
+  z-index: 1;
+}
+ul.meniu > li > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 2 * var(--padding-border));
+  height: calc(100% - 2 * var(--padding-border));
+  background-color: var(--culoare-hover);
+  border: 3px double var(--border-hover);
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px var(--border-hover);
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
+}
+ul.meniu > li > a:hover::before {
+  transform: scaleY(1);
+}
+ul.meniu > li:hover {
+  background-color: var(--culoare-inchisa-meniu);
+}
+ul.meniu > li:hover ul {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+  z-index: 10;
+}
+
+/*# sourceMappingURL=nav.css.map */

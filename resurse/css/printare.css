@@ -1,0 +1,136 @@
+#banner-printare,
+#watermark {
+    display: none;
+}
+
+@media print {
+    /* Bannerul să fie afișat în dreapta-sus a primei pagini într-un border negru cu linie dublă. 
+    Lățimea bannerului să fie jumătate din lățimea conținutului paginii (se ia în considerare lățimea fără margini) */
+    #banner-printare {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        border: 4px double var(--text-color);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* imaginile, videoclipurile, iframe-urile și alte elemente media împreună cu elemente dependente de ele 
+    (de exemplu descrierile imaginilor) vor fi ascunse. Linkul către începutul paginii va fi de asemenea ascuns */
+    picture,
+    .container-iframe,
+    #link-top,
+    #descarcare {
+        display: none;
+    }
+
+    /* Gridul paginii va fi afișat ca block ca să nu apară celulele secționate în paginile printate. */
+    #grid-pagina {
+        display: block;
+    }
+
+    #grid-pagina {
+        grid-template-areas: "zona-unu zona-unu"
+                             "zona-doi zona-doi"
+                             "zona-trei zona-patru"
+                             "zona-cinci zona-sase"
+                             "zona-sapte zona-sapte"
+                             "zona-opt zona-opt";
+    }
+
+    /* toate linkurile din pagină se vor afișa ca text normal (nu colorate sau subliniate) */
+    a {
+        color: var(--text-color);
+        text-decoration: none;
+    }
+
+    /* Headingul de nivel 1, cu titlu site-ului, va fi pe prima pagină, centrat pe orizontală. sub el se va afișa meniul 
+    sub formă de listă neordonată cu elementele unele sub altele (subopțiunile fiind în subliste). După meniu va fi un page break. 
+    Inaintea footerului, de asemenea va fi un page break */
+    h1 {
+        text-align: center;
+        margin-top: 50%;
+    }
+
+    nav ul.meniu {
+        display: block;
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    nav ul.meniu > li {
+        display: list-item;
+        border: none;
+    }
+
+    nav ul.meniu ul {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+        list-style-type: circle;
+        padding-left: 20px;
+    }
+
+    nav ul.meniu ul li {
+        display: list-item;
+        border: none;
+    }
+
+    nav ul.meniu ul li a {
+        display: block;
+    }
+
+    nav ul.meniu ul {
+        display: block !important;
+    }
+
+    nav ul.meniu > li:nth-last-child(2) {
+        margin-top: 90px;
+    }
+
+    nav {
+        page-break-after: always;
+    }
+
+    /* Pe fiecare pagină va exista un "watermark" care va conține numele vostru (numele scris pe un rând și prenumele sub el. 
+    Acesta va avea lățime de 60% din lățimea paginii și înalțime de 10% din înalțimea paginii, va fi centrat pe pagină, și 
+    literele vor avea o culoare neagră, cu opacitate de 0.3 (opacitatea va fi setată pe culoare nu pe banner) */
+    #watermark {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 60%;
+        height: 10%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 2em;
+        color: rgba(0, 0, 0, 0.3);
+    }
+
+    /* La printare, paginile din stânga (în print preview) să aibă margine în stânga de 2cm și margine în dreapta de 1cm, 
+    iar cele din dreapta să aibă margine în dreapta de 2cm și 1cm în stânga. */
+    @page {
+        size: A4;
+        margin-bottom:2cm;
+		margin-top:2cm;
+    }
+    @page:left{
+		margin-left:2cm;
+		margin-right:1cm;
+	}
+	@page:right{
+		margin-right:2cm;
+		margin-left:1cm;
+	}
+    #produse,
+    #calendar,
+    #server,
+    #resurse {
+        page-break-after: always;
+    }
+
+}
