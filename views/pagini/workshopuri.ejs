@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include('../fragmente/head') %>
+    <title>Workshopuri - Mobila cu poveste</title>
+    <style>
+        video {
+            width: 100%;
+            max-width: 800px;
+            min-width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <%- include('../fragmente/header') %>
+    <main>
+        <section>
+            <h2>Workshopuri</h2>
+            <p>La <strong>Mobila cu poveste</strong>, organizam workshopuri pentru a impartasi pasiunea noastra pentru reconditionarea si decorarea mobilierului. Fiecare workshop este conceput pentru a oferi participantilor cunostinte practice si teoretice despre diverse tehnici de reconditionare si decorare.</p>
+            <p>Workshopurile noastre includ:</p>
+            <ul>
+                <li>Pictura pe lemn</li>
+                <li>Tehnici de decorare lampi</li>
+                <li>Tehnici de decorare pereti</li>
+                <li>Clasa de incepatori dulgherie</li>
+            </ul>
+            <p>Fiecare sesiune este condusa de experti in domeniu si acopera o gama larga de subiecte, de la tehnici de baza la tehnici avansate.</p>
+            <video id="video-vtt" controls poster="/resurse/imagini/workshops/lamp.jpg" preload="metadata">
+                <source src="/resurse/video/lamp.mp4" type="video/mp4">
+                <source src="/resurse/video/lamp.webm" type="video/webm">
+                <track src="/resurse/video/lamp-ro.vtt" kind="subtitles" srclang="ro" label="Română" default>
+                <track src="/resurse/video/lamp-en.vtt" kind="subtitles" srclang="en" label="English">
+                Your browser does not support the video tag.
+            </video>
+            <div>
+                <button onclick="changeSubtitle('ro')">Română</button>
+                <button onclick="changeSubtitle('en')">English</button>
+            </div>
+        </section>
+        <section id="testimoniale">
+            <h2>Testimoniale</h2>
+            <section>
+                <h3>Ce spun participantii nostri</h3>
+                <ul>
+                    <li>
+                        <blockquote>
+                            <p><q>Workshopurile sunt foarte informative si distractive. Am invatat multe tehnici noi de decorare.</q></p>
+                            <p>- Ana</p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote>
+                            <p><q>Am participat la workshopul de pictura pe lemn si a fost o experienta minunata. Recomand cu caldura!</q></p>
+                            <p>- Maria</p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote>
+                            <p><q>Tehnicile de decorare lampi pe care le-am invatat la workshop au transformat complet casa mea.</q></p>
+                            <p>- Ion</p>
+                        </blockquote>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </main>
+    <%- include('../fragmente/footer') %>
+    <script>
+        function changeSubtitle(lang) {
+            const video = document.getElementById('video-vtt');
+            for (let i = 0; i < video.textTracks.length; i++) {
+                video.textTracks[i].mode = video.textTracks[i].language === lang ? 'showing' : 'hidden';
+            }
+        }
+    </script>
+</body>
+</html>

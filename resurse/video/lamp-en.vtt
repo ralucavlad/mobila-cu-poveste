@@ -1,0 +1,29 @@
+WEBVTT
+
+STYLE
+::cue {
+    background: rgba(255, 255, 255, 0.3);
+    color: var(--secondary-color-3);
+    text-shadow: none;
+}
+::cue(#intro) {
+    text-align: center;
+    align: middle;
+    position: 50%;
+}
+
+1
+00:00:00.000 --> 00:00:05.000
+<00:00:00.000><c.intro>Creating a DIY String Lamp</c>
+
+2
+00:00:05.000 --> 00:00:10.000
+The first step is to gather the necessary materials: string and a lamp base.
+
+3
+00:00:10.000 --> 00:00:20.000
+Wrap the string around the base.
+
+4
+00:00:20.000 --> 00:00:28.000
+Finally, glue the string to the base so it doesn't unravel.

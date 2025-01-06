@@ -3,9 +3,9 @@
   "description": "Magazin online de mobila reconditionata",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
-    "build-scss": "sass scss/:resurse/css/"
+    "build-scss": "sass scss/:resurse/css/",
+    "dev": "npm run build-scss & nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -50,6 +50,9 @@
   },
   "homepage": "https://github.com/ralucavlad/mobila-cu-poveste#readme",
   "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
     "sass": "^1.83.0"
   }
 }

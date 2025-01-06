@@ -1,3 +1,21 @@
+:root {
+    --primary-color: #F2E8D9;
+    --secondary-color-1: #F7E5D7;
+    --secondary-color-2: #F2EBDA;
+    --secondary-color-3: #F2C889;
+    --secondary-color-4: #F2E0DA;
+    --strong-color: rgb(45, 38, 34);
+    --white-color: #FFFFFF;
+    --text-color: #000000;
+    --border-color: #CCCCCC;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --math-color-1: #FF5733;
+    --math-color-2: #168029;
+    --math-color-3: #3357FF;
+    --visited-link-color: var(--secondary-color-3); /* New variable for visited link color */
+}
+
 html {
     --dimensiune-text: 18px;
     font-size: var(--dimensiune-text);
@@ -46,6 +64,40 @@ nav ul li a:hover {
     color: var(--secondary-color-4);
 }
 
+a:visited {
+    color: var(--visited-link-color);
+}
+
+a[href^="http"]::before {
+    content: "⮳";
+    font-size: 1.5em;
+    margin-right: 0.2em;
+}
+
+a[href^="http"]:hover::before {
+    color: var(--strong-color);
+}
+
+/* La aducerea cursorului pe un link din conținutul paginii (linkuri din main, nu din meniu) , 
+o pata de culoare va crește din centru, așa cum se vede în videoclip, și se va micșora la loc 
+când luăm cursorul de pe link. Pata de culoare s-a realizat folosind o imagine de background de 
+tip gradient radial, având (în cadrul gradientului) atăt la 0% cât și la 40% din gradient o 
+culoare c1, iar la 80% și 100% culoarea transparent. Imaginea de background e poziționată 
+centrat (background-position) și de dimensiune 0 (background-size). Când se vine cu cursorul 
+pe link, imaginea de background crește la 100% cu ajutorul unei tranziții. */
+main a {
+    position: relative;
+    transition: background-size 1s ease, background-position 1s ease;
+    background-image: radial-gradient(circle, var(--strong-color) 0%, var(--strong-color) 40%, transparent 80%, transparent 100%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 0% 0%;
+    border-radius: 50%;
+}
+
+main a:hover {
+    background-size: 100% 100%;
+}
 
 /* Grid */
 #grid-pagina {
@@ -326,4 +378,12 @@ section#testimoniale-resurse {
     width: 100%;
     height: auto;
     border-radius: var(--border-radius);
+}
+
+/* Video */
+video#video-vtt {
+    width: 100%;
+    max-width: 800px;
+    min-width: 300px;
+    object-fit: cover;
 }

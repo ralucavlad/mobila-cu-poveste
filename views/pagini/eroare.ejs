@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <%- include('../fragmente/head.ejs') %>
+        <meta name="description" content="Mobila cu poveste va ofera mobila reconditionata si accesorii cochete, pe langa organizarea de workshopuri despre decorare">
+        <meta name="keywords" content="mobila reconditionata, mobilier vechi, upcycling, mobilier, mese, scaune, comode, dulapuri, bufete, vitrine, fotolii, canapele, noptiere, obiecte decorative, lustre, veioze, lampi, rame foto, diy, workshopuri, tehnici de decorare, pictura pe lemn">
+        <title>Mobila cu poveste</title>
+    </head>
+    <body>
+        <%- include('../fragmente/header.ejs') %>
+        <main>
+            <div id="err-coloane">
+                <div id="err-imag">
+                    <img src="<%- locals.imagine %>" />
+                </div>
+                <section>
+                    <h2><%- locals.titlu %></h2>
+                    <p><%- locals.text %></p>
+                </section>
+            </div>
+        </main>
+        <%- include('../fragmente/footer.ejs') %>
+    </body>
+</html>

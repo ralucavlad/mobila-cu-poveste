@@ -1,0 +1,29 @@
+WEBVTT
+
+STYLE
+::cue {
+    background: rgba(255, 255, 255, 0.3);
+    color: var(--secondary-color-3);
+    text-shadow: none;
+}
+::cue(#intro) {
+    text-align: center;
+    align: middle;
+    position: 50%;
+}
+
+1
+00:00:00.000 --> 00:00:05.000
+<00:00:00.000><c.intro>Crearea unei lampi DIY cu sfoara</c>
+
+2
+00:00:05.000 --> 00:00:10.000
+Primul pas este sa pregatiti materialele necesare: sfoara si o baza pentru lampa.
+
+3
+00:00:10.000 --> 00:00:20.000
+Infasurati sfoara in jurul bazei.
+
+4
+00:00:20.000 --> 00:00:28.000
+La final, lipiti sfoara de baza, astfel incat sa nu se desfaca.
