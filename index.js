@@ -46,6 +46,8 @@ app.get("/*", (req, res) => {
             if (err) {
                 if (err.message.startsWith("Failed to lookup view")) {
                     afisareEroare(res, 404, "Pagina negasita", "Verificati calea URL-ului");
+                } else {
+                    afisareEroare(res, -1);
                 }
             } else {
                 res.send(rezRandare);
@@ -54,6 +56,8 @@ app.get("/*", (req, res) => {
     } catch (err1) {
         if (err1.message.startsWith("Cannot find module")) {
             afisareEroare(res, 404, "Pagina negasita", "Verificati calea URL-ului");
+        } else {
+            afisareEroare(res, -1);
         }
     }
 });
@@ -76,6 +80,9 @@ function afisareEroare(res, identificator, titlu, text, imagine) {
     });
 
     if (eroare) {
+        if (eroare.status) {
+            res.status(identificator);
+        }
         res.render("pagini/eroare", {
             titlu: titlu || eroare.titlu,
             text: text || eroare.text,
