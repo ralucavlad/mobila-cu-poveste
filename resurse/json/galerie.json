@@ -1,0 +1,132 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+		{
+			"cale_fisier":"bufet_1.png",
+            "titlu":"Bufet",
+            "alt":"bufet", 
+            "text_descriere":"Bufet din lemn de trandafir",
+            "luni":["ianuarie","februarie","iunie"]
+		},
+        {
+			"cale_fisier":"bufet_2.png",
+            "titlu":"Bufet",
+            "alt":"bufet", 
+            "text_descriere":"Bufet pentru bucatarie",
+            "luni":["ianuarie","februarie","martie","iunie"]
+		},
+        {
+			"cale_fisier":"canapea_1.jpg",
+            "titlu":"Canapea",
+            "alt":"canapea", 
+            "text_descriere":"Canapea cu dungi",
+            "luni":["ianuarie","martie","aprilie","august"]
+		},
+        {
+			"cale_fisier":"canapea_2.png",
+            "titlu":"Canapea",
+            "alt":"canapea", 
+            "text_descriere":"Canapea din catifea rosie",
+            "luni":["ianuarie","februarie","aprilie","iunie"]
+		},
+        {
+			"cale_fisier":"comoda_1.jpg",
+            "titlu":"Comoda",
+            "alt":"comoda", 
+            "text_descriere":"Comoda din lemn de nuc",
+            "luni":["ianuarie","februarie","aprilie","iulie"]
+		},
+        {
+			"cale_fisier":"comoda_2.jpg",
+            "titlu":"Comoda",
+            "alt":"comoda", 
+            "text_descriere":"Comoda cu 4 sertare",
+            "luni":["ianuarie","februarie","aprilie","iunie"]
+		},
+        {
+			"cale_fisier":"dulap_1.jpg",
+            "titlu":"Dulap",
+            "alt":"dulap", 
+            "text_descriere":"Dulap verde",
+            "luni":["ianuarie","februarie","aprilie","septembrie"]
+		},
+        {
+			"cale_fisier":"dulap_2.jpg",
+            "titlu":"Dulap",
+            "alt":"dulap", 
+            "text_descriere":"Dulap masiv",
+            "luni":["februarie","aprilie","septembrie"]
+		},
+        {
+			"cale_fisier":"fotoliu_1.jpg",
+            "titlu":"Fotoliu",
+            "alt":"fotoliu", 
+            "text_descriere":"Fotoliu gri",
+            "luni":["februarie","aprilie","septembrie"]
+		},
+        {
+			"cale_fisier":"masa_1.png",
+            "titlu":"Masa",
+            "alt":"masa", 
+            "text_descriere":"Masa cu un picior",
+            "luni":["ianuarie","februarie","aprilie","septembrie"]
+		},
+        {
+			"cale_fisier":"masa_2.png",
+            "titlu":"Masa",
+            "alt":"masa", 
+            "text_descriere":"Masa de sufragerie cu un picior",
+            "luni":["ianuarie","februarie","aprilie","septembrie"]
+		},
+        {
+			"cale_fisier":"masa_harry_potter.jpg",
+            "titlu":"Masa",
+            "alt":"masa", 
+            "text_descriere":"Masa Harry Potter",
+            "luni":["ianuarie","februarie","aprilie","septembrie"],
+            "by": "Karen Roe"
+		},
+        {
+			"cale_fisier":"noptiera_1.png",
+            "titlu":"Noptiera",
+            "alt":"noptiera", 
+            "text_descriere":"Noptiera din lemn de cires",
+            "luni":["ianuarie","februarie","aprilie","septembrie"]
+		},
+        {
+			"cale_fisier":"noptiera_2.png",
+            "titlu":"Noptiera",
+            "alt":"noptiera", 
+            "text_descriere":"Noptiera cu un sertar",
+            "luni":["ianuarie","februarie","aprilie","septembrie"]
+		},
+        {
+			"cale_fisier":"noptiera_3.jpg",
+            "titlu":"Noptiera",
+            "alt":"noptiera", 
+            "text_descriere":"Noptiera alba",
+            "luni":["ianuarie","februarie","aprilie","septembrie"]
+		},
+        {
+			"cale_fisier":"scaun_1.jpg",
+            "titlu":"Scaun",
+            "alt":"scaun", 
+            "text_descriere":"Scaun din lemn",
+            "luni":["februarie","aprilie","septembrie"]
+		},
+        {
+			"cale_fisier":"set_masa_scaun.png",
+            "titlu":"Set masa cu scaune",
+            "alt":"masa cu scaune", 
+            "text_descriere":"Set masa cu 3 scaune",
+            "luni":["februarie","aprilie","septembrie"]
+		},
+        {
+			"cale_fisier":"vitrina_1.jpg",
+            "titlu":"Vitrina",
+            "alt":"vitrina", 
+            "text_descriere":"Vitrina neagra",
+            "luni":["ianuarie","februarie","aprilie","septembrie"]
+		}
+	]
+}

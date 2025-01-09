@@ -1,0 +1,84 @@
+.animated-gallery {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  border: 10px solid transparent;
+  border-image: url("../imagini/galerie/border.png") 30;
+}
+@media screen and (max-width: 1000px) {
+  .animated-gallery {
+    display: none;
+  }
+}
+.animated-gallery .gallery-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 1s linear, clip-path 1s linear;
+  animation: slide 9s infinite;
+}
+.animated-gallery .gallery-item-0 {
+  animation-delay: 0s;
+}
+.animated-gallery .gallery-item-1 {
+  animation-delay: 3s;
+}
+.animated-gallery .gallery-item-2 {
+  animation-delay: 6s;
+}
+.animated-gallery .gallery-item-3 {
+  animation-delay: 9s;
+}
+.animated-gallery .gallery-item-4 {
+  animation-delay: 12s;
+}
+.animated-gallery .gallery-item-5 {
+  animation-delay: 15s;
+}
+.animated-gallery .gallery-item-6 {
+  animation-delay: 18s;
+}
+.animated-gallery .gallery-item-7 {
+  animation-delay: 21s;
+}
+.animated-gallery .gallery-item-8 {
+  animation-delay: 24s;
+}
+.animated-gallery .gallery-item-9 {
+  animation-delay: 27s;
+}
+.animated-gallery .gallery-item-10 {
+  animation-delay: 30s;
+}
+.animated-gallery .gallery-item-11 {
+  animation-delay: 33s;
+}
+.animated-gallery .gallery-item-12 {
+  animation-delay: 36s;
+}
+.animated-gallery .gallery-item-13 {
+  animation-delay: 39s;
+}
+.animated-gallery .gallery-item-14 {
+  animation-delay: 42s;
+}
+.animated-gallery .gallery-item-15 {
+  animation-delay: 45s;
+}
+.animated-gallery:hover .gallery-item {
+  animation-play-state: paused;
+}
+@keyframes slide {
+  0%, 100% {
+    opacity: 0;
+    clip-path: inset(0 50% 0 50%);
+  }
+  10%, 90% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}

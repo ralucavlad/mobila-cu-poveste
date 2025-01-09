@@ -10,6 +10,10 @@ nav {
     background-color: var(--culoare-inchisa-meniu);    
 }
 
+.hamburger-menu-container {
+    height: 0;
+}
+
 ul.meniu {
     display: flex;
     list-style-type: none;

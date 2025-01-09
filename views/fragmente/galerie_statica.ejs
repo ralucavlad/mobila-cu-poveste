@@ -1,0 +1,28 @@
+<h2><a href="/galerie">Galerie</a></h2>
+<div id="grid-galerie">
+
+<% 
+    let data = new Date()
+    let vectorLuni=["ianuarie","februarie","martie","aprilie","mai","iunie","iulie","august","septembrie","octombrie","noiembrie","decembrie"];
+
+    let luna = vectorLuni[data.getMonth()];
+    let imaginiAfisate = 0;
+    for (let imag of imagini){ 
+        if (imag.luni && imag.luni.includes(luna) && imaginiAfisate < 12){
+            imaginiAfisate++;
+        %>
+        <figure data-index>
+            <picture>
+                <source srcset = "<%- imag.fisier_mediu %>" media="(max-width:1200px)"/>
+                <img src = "<%- imag.fisier %>" alt="<%- imag.alt || imag.cale_fisier %>" title="<%- imag.text_descriere %>"/>
+            </picture>
+            <figcaption>
+                <span class="index"></span> <%- imag.text_descriere %>
+                <% if (imag.by) { %>
+                    <br><small>Sursa: <%- imag.by %></small>
+                <% } %>
+            </figcaption>
+        </figure>
+    <% } %>
+<% } %>
+</div>

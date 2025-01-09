@@ -207,14 +207,7 @@
                         <h2>Testimoniale</h2>
                         <section>
                             <h3>Ce spun clienții noștri</h3>
-                            <figure>
-                                <picture>
-                                    <source srcset="/resurse/imagini/catalog/testimonial_200.jpg" media="(max-width:700px)">
-                                    <source srcset="/resurse/imagini/catalog/testimonial_380.jpg" media="(max-width:1200px)">
-                                    <img src="/resurse/imagini/catalog/testimonial_640.jpg" alt="Testimonial">
-                                </picture>
-                                <figcaption>Testimoniale de la clienții noștri</figcaption>
-                            </figure>
+                            <div class="testimonial-background"></div>
                             <ul>
                                 <li>
                                     <blockquote>
@@ -255,7 +248,12 @@
                     </section>
                 </section>
 
-                <!-- Secțiunea 9 date utilizator -->
+                <!-- Secțiunea 9 galerie statica -->
+                <section id="galerie-statica">                    
+                    <%- include('../fragmente/galerie_statica.ejs') %>
+                </section>
+
+                <!-- Secțiunea 10 date utilizator -->
                 <section id="utilizator">
                     <h2>Date utilizator</h2>
                     <p>IP-ul tau este: <%- locals.ip %></p>
@@ -263,5 +261,6 @@
             </div>    
         </main>
         <%- include('../fragmente/footer.ejs') %>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>

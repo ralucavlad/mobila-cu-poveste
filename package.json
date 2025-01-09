@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-scss": "sass scss/:resurse/css/",
-    "dev": "npm run build-scss & nodemon index.js"
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",

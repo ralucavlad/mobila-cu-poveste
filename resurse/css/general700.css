@@ -20,7 +20,9 @@ header, footer, #grid-pagina > * {
                          "zona-cinci"
                          "zona-sase"
                          "zona-sapte"
-                         "zona-opt";
+                         "zona-opt",
+                         "zona-noua",
+                         "zona-zece";
 }
 
 .table-container {
@@ -31,4 +33,9 @@ header, footer, #grid-pagina > * {
 
 #tab-materiale {
     min-width: 58.3333rem; /* 700px to rem, based on 12px root font size */
+}
+
+/* Grid galerie */
+#grid-galerie {
+    display: block;
 }

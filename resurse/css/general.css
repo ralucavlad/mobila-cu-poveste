@@ -30,6 +30,7 @@ body {
     padding-right: var(--spatiere--pagina);
     background-color: var(--white-color);
     color: var(--text-color);
+    counter-reset: image-counter;
 }
 
 header, footer {
@@ -99,6 +100,14 @@ main a:hover {
     background-size: 100% 100%;
 }
 
+/* Exclude sectiunea cu id resurse */
+#resurse a {
+    background-image: none;
+    background-size: initial;
+    background-position: initial;
+    border-radius: initial;
+}
+
 /* Grid */
 #grid-pagina {
     --grid-gap: 1.25rem; /* 20px to rem */
@@ -107,7 +116,9 @@ main a:hover {
                          "zona-doi zona-doi zona-trei zona-trei"
                          "zona-doi zona-doi zona-patru zona-patru"
                          "zona-cinci zona-sase zona-sase zona-sapte"
-                         "zona-opt zona-opt zona-opt zona-opt";
+                         "zona-opt zona-opt zona-opt zona-opt"
+                         "zona-noua zona-noua zona-noua zona-noua"
+                         "zona-zece zona-zece zona-zece zona-zece";
     grid-gap: var(--grid-gap);
     padding-top: var(--grid-gap);
     padding-bottom: var(--grid-gap);
@@ -150,6 +161,14 @@ main a:hover {
 
 #testimoniale-resurse {
     grid-area: zona-opt;
+}
+
+#galerie-statica {
+    grid-area: zona-noua;
+}
+
+#utilizator {
+    grid-area: zona-zece;
 }
 
 #grid-pagina > section {
@@ -208,7 +227,7 @@ main a:hover {
 }
 
 .taburi-iframe>a {
-    width: 8.3333rem; /* 150px to rem */
+    width: 10rem;
     height: 2.2222rem; /* 40px to rem */
     line-height: 2.2222rem; /* 40px to rem */
     text-align: center;
@@ -224,7 +243,7 @@ main a:hover {
 
 .taburi-iframe>a:hover {
     background-color: var(--secondary-color-3);
-    width: 10rem; /* 180px to rem */
+    width: 12rem; /* 180px to rem */
 }
 
 /* link top */
@@ -359,7 +378,7 @@ section#testimoniale-resurse {
     padding: 0;
 }
 
-#testimoniale, #resurse {
+#testimoniale, #resurse, #workshopuri {
     background-color: var(--secondary-color-2);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -380,10 +399,145 @@ section#testimoniale-resurse {
     border-radius: var(--border-radius);
 }
 
+figure[data-index] {
+    counter-increment: image-counter;
+}
+
+figure[data-index] .index::before {
+    content: counter(image-counter, lower-greek) ". ";
+    font-weight: bold;
+}
+
 /* Video */
 video#video-vtt {
     width: 100%;
     max-width: 800px;
     min-width: 300px;
     object-fit: cover;
+}
+
+/* Grid galerie */
+#grid-galerie {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap:0.5em;
+    grid-column-gap:0.5em;
+}
+
+#grid-galerie img {
+    width: 100%;
+    transition: filter 1.1s ease;
+}
+
+#grid-galerie figcaption {
+    text-align:center;
+    transition: transform 1.1s ease;
+}
+
+#grid-galerie figure:hover img {
+    filter: contrast(200%);
+}
+
+#grid-galerie figure:hover figcaption {
+    transform: scale(1.1);
+}
+
+#grid-galerie figcaption {
+    text-align:center;
+}
+
+#grid-galerie > figure:nth-child(2){
+    grid-area: 1/3/2/4;
+}
+#grid-galerie > figure:nth-child(3){
+    grid-area: 2/2/3/3;
+}
+#grid-galerie > figure:nth-child(4){
+    grid-area: 3/1/4/2;
+}
+#grid-galerie > figure:nth-child(5){
+    grid-area: 3/3/4/4;
+}
+#grid-galerie > figure:nth-child(6){
+    grid-area: 4/2/5/3;
+}
+#grid-galerie > figure:nth-child(7){
+    grid-area: 5/1/6/2;
+}
+#grid-galerie > figure:nth-child(8){
+    grid-area: 5/3/6/4;
+}
+#grid-galerie > figure:nth-child(9){
+    grid-area: 6/2/7/3;
+}
+#grid-galerie > figure:nth-child(10){
+    grid-area: 7/1/8/2;
+}
+#grid-galerie > figure:nth-child(11){
+    grid-area: 7/3/8/4;
+}
+#grid-galerie > figure:nth-child(12){
+    grid-area: 8/2/9/3;
+}
+
+/* Identificator: efect-css-reflexie-text */
+#text-reflexie {
+    position: relative;
+    display: inline-block;
+    color: var(--strong-color);
+    cursor: pointer;
+    transform: rotate(-5deg);
+    transition: color 1s ease;
+}
+  
+#text-reflectat {
+    position: absolute;
+    top: 45%;
+    left: 110%;
+    transform: scaleX(-1) rotate(-10deg);
+    color: var(--strong-color);
+    transition: color 1s ease;
+}
+  
+#text-reflexie:hover,
+#text-reflectat:hover,
+#text-reflexie:hover #text-reflectat {
+    color: var(--secondary-color-3);
+}
+
+/* Identificator: efect-css-duotone */
+.testimonial-background {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 200px;
+    background-image: url('/resurse/imagini/catalog/testimonial_640.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.testimonial-background::before,
+.testimonial-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    mix-blend-mode: screen;
+}
+
+.testimonial-background::before {
+    background-color: var(--math-color-2);
+}
+
+.testimonial-background::after {
+    background-color: var(--math-color-3);
+}
+
+.testimonial-background:hover {
+    filter: grayscale(100%);
+    transition: filter 1.5s ease;
 }

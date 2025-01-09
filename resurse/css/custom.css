@@ -1,0 +1,62 @@
+:root {
+  --bs-primary: var(--primary-color);
+  --bs-secondary: var(--secondary-color-3);
+  --bs-heading-color: var(--strong-color); /* culori de font */
+  --bs-breakpoint-xs: 0;
+  --bs-breakpoint-sm: 500px;
+  --bs-breakpoint-md: 700px;
+  --bs-breakpoint-lg: 900px;
+  --bs-breakpoint-xl: 1100px;
+  --bs-breakpoint-xxl: 1500px;
+  --bs-border-radius: 0.5rem;
+  --bs-border-radius-sm: 0.25rem;
+  --bs-border-radius-lg: 1rem;
+  --bs-border-radius-xl: 1.5rem;
+  --bs-border-radius-xxl: 2.5rem;
+  --bs-border-radius-pill: 50rem;
+  --bs-body-font-family: "Lora", serif;
+}
+
+[data-bs-theme=dark] {
+  --bs-body-bg: var(--strong-color);
+  --bs-body-color: var(--white-color);
+}
+
+h2, .h2 {
+  font-size: 1.325rem;
+}
+
+@media (min-width: 1200px) {
+  h2, .h2 {
+    font-size: 1.5rem;
+  }
+}
+h3, .h3 {
+  font-size: 1.3rem;
+}
+
+@media (min-width: 1200px) {
+  h3, .h3 {
+    font-size: 1.15rem;
+  }
+}
+h4, .h4 {
+  font-size: 1.275rem;
+}
+
+@media (min-width: 1200px) {
+  h4, .h4 {
+    font-size: 1rem;
+  }
+}
+h5, .h5 {
+  font-size: 0.95rem;
+}
+
+h6, .h6 {
+  font-size: 0.75rem;
+}
+
+button {
+  border-radius: 0.5rem;
+}

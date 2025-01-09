@@ -5,6 +5,7 @@ nav {
 
 .hamburger-menu-container {
   background-color: var(--culoare-inchisa-meniu);
+  height: inherit;
 }
 
 ul.meniu {
@@ -175,5 +176,3 @@ ul.meniu > li a {
   animation-fill-mode: forwards;
   background-color: var(--culoare-inchisa-meniu);
 }
-
-/*# sourceMappingURL=nav700.css.map */
