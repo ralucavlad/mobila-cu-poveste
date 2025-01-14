@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include('../fragmente/head.ejs') %>
+    <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <%- include('../fragmente/header.ejs') %>
+    <main class="container">
+        <section id="filtre" class="mb-4">
+            <h2>Filtre</h2>
+            <div class="row gy-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="numeProdus">Nume produs:</label>
+                        <input type="text" id="numeProdus" class="form-control" placeholder="Introduceti numele produsului">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="pretMin">Pret minim (<span id="pretMinVal">0</span>):</label>
+                        <div class="d-flex align-items-center">
+                            <span>0</span>
+                            <input type="range" id="pretMin" class="form-control-range mx-2 flex-grow-1" min="0" max="5000" value="0">
+                            <span>5000</span>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="pretMax">Pret maxim (<span id="pretMaxVal">5000</span>):</label>
+                        <div class="d-flex align-items-center">
+                            <span>0</span>
+                            <input type="range" id="pretMax" class="form-control-range mx-2 flex-grow-1" min="0" max="5000" value="5000">
+                            <span>5000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="material">Material:</label>
+                        <select id="material" class="form-control">
+                            <option value="">Oricare</option>
+                            <option value="lemn">Lemn</option>
+                            <option value="sticla">Sticla</option>
+                            <option value="panza">Panza</option>
+                            <option value="catifea">Catifea</option>
+                            <option value="piele">Piele</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="categorie">Categorie:</label>
+                        <input list="categorii" id="categorie" class="form-control">
+                        <datalist id="categorii">
+                            <option value="sufragerie">
+                            <option value="bucatarie">
+                            <option value="dormitor">
+                        </datalist>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Inaltime:</label>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-outline-primary">
+                                <input type="radio" id="inaltimeSub100" name="inaltime" value="0:99"> Sub 100cm
+                            </label>
+                            <label class="btn btn-outline-primary">
+                                <input type="radio" id="inaltime100" name="inaltime" value="100"> 100cm
+                            </label>
+                            <label class="btn btn-outline-primary">
+                                <input type="radio" id="inaltimePeste100" name="inaltime" value="101:9999999999"> Peste 100cm
+                            </label>
+                            <label class="btn btn-outline-primary active">
+                                <input type="radio" id="inaltimeOricare" name="inaltime" value="oricare" checked> Oricare
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="materiale">Materiale:</label>
+                        <select id="materiale" class="form-control" multiple>
+                            <option value="lemn">Lemn</option>
+                            <option value="sticla">Sticla</option>
+                            <option value="panza">Panza</option>
+                            <option value="catifea">Catifea</option>
+                            <option value="piele">Piele</option>
+                            <option value="otel">Otel</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-check">
+                        <input type="checkbox" id="reducere" class="form-check-input">
+                        <label for="reducere" class="form-check-label">Reducere</label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-floating">
+                        <textarea id="descriere" class="form-control" placeholder="Introduceti descrierea produsului" style="height: 100px"></textarea>
+                        <label for="descriere">Descriere:</label>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex flex-wrap gap-2">
+                    <button id="filtreaza" class="btn btn-primary">
+                        <i class="bi bi-funnel-fill"></i>
+                        <span class="d-none d-sm-inline">Filtreaza</span>
+                    </button>
+                    <button id="sortAsc" class="btn btn-secondary">
+                        <i class="bi bi-sort-alpha-up"></i>
+                        <span class="d-none d-sm-inline">Sorteaza Ascendent</span>
+                    </button>
+                    <button id="sortDesc" class="btn btn-secondary">
+                        <i class="bi bi-sort-alpha-down"></i>
+                        <span class="d-none d-sm-inline">Sorteaza Descendent</span>
+                    </button>
+                    <button id="calculeaza" class="btn btn-info">
+                        <i class="bi bi-calculator"></i>
+                        <span class="d-none d-sm-inline">Calculeaza</span>
+                    </button>
+                    <button id="reseteaza" class="btn btn-warning">
+                        <i class="bi bi-arrow-counterclockwise"></i>
+                        <span class="d-none d-sm-inline">Reseteaza</span>
+                    </button>
+                </div>
+                <div class="col-md-12">
+                    <div id="sumaPreturi" class="mt-3"></div>
+                </div>
+            </div>
+        </section>
+        <section id="produse">
+            <h2>Produse</h2>
+            <div class="row">
+                <% for(let prod of produse) { %>
+                    <article id="art<%- prod.id %>" class="produs col-md-6 mb-4 <%- prod.categorie.replace(' ', '') %>">
+                        <h3>Nume: <a href="/produs/<%- prod.id %>"><span><%- prod.nume %></span></a></h3>
+                        <p>Categorie: <span><%- prod.categorie %></span></p>
+                        <p>Descriere: <span><%- prod.descriere %></span></p>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <figure>
+                                    <a href="/produs/<%- prod.id %>"><img src="/resurse/imagini/produse/<%- prod.imagine %>" class="img-fluid" alt="[imagine <%- prod.nume %>]" /></a>
+                                </figure>
+                            </div>
+                            <div class="col-md-9">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td>Pret</td>
+                                        <td id="pret-<%- prod.id %>"><%- prod.pret %> RON</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inaltime</td>
+                                        <td id="inaltime-<%- prod.id %>"><%- prod.inaltime %> cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Material</td>
+                                        <td id="material-<%- prod.id %>"><%- prod.material_produs %></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Toate Materialele</td>
+                                        <td id="toate-materialele-<%- prod.id %>"><%- prod.toate_materialele.join(', ') %></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Data Adaugare</td>
+                                        <td>
+                                            <time datetime="<%- prod.data_adaugare.toISOString() %>">
+                                                <%- new Date(prod.data_adaugare).getDate() %>/<%- new Date(prod.data_adaugare).toLocaleString('ro-RO', { month: 'long' }) %>/<%- new Date(prod.data_adaugare).getFullYear() %> (<%- new Date(prod.data_adaugare).toLocaleString('ro-RO', { weekday: 'long' }) %>)
+                                            </time>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reducere</td>
+                                        <td id="reducere-<%- prod.id %>"><%- prod.reducere ? 'Da' : 'Nu' %></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+        </section>
+    </main>
+    <%- include('../fragmente/footer.ejs') %>   
+    <script src="/resurse/js/produse.js"></script>
+    <script src="/resurse/js/tema.js"></script>
+</body>
+</html>

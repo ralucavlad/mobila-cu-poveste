@@ -26,6 +26,10 @@ $theme-colors: (
 
   // font family
   --bs-body-font-family: "Lora", serif;
+
+  // button border radius and border width
+  --bs-border-radius: 0.7rem !important;
+  --bs-border-width: 2px !important;
 }
 
 [data-bs-theme=dark] {
@@ -70,5 +74,6 @@ h6, .h6 {
 
 // încă una sau mai mule variabile alese de voi
 button {
-  border-radius: .5rem;
+  border-radius: var(--btn-border-radius);
+  border-width: var(--btn-border-width);
 }

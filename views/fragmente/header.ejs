@@ -16,13 +16,24 @@
             <li>
                 <a href="/produse">Produse</a>
                 <ul>
-                    <li><a href="/mobila">Mobila</a></li>
-                    <li><a href="/accesorii">Accesorii</a></li>
-                    <li><a href="/workshopuri#testimoniale">Testimoniale</a></li>
+                    <li><a href="/produse">Toate</a></li>
+                    <% optiuni.forEach(function(optiune) { %>
+                        <li><a href="/produse?tip=<%= optiune.unnest %>"><%= optiune.unnest %></a></li>
+                    <% }); %>
                 </ul>
             </li>
+            <li><a href="/workshopuri#testimoniale">Testimoniale</a></li>
             <li><a href="/index#contact">Contact</a></li>
             <li><a href="/index#resurse">Resurse</a></li>
         </ul>
     </nav>
+    <div id="container-switch-tema" class="my-2">
+        <i class="fas fa-sun me-1"></i>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="switch-tema">
+            <label class="form-check-label dark" for="switch-tema">
+                <i class="fas fa-moon"></i>
+            </label>
+        </div>
+    </div>
 </header>

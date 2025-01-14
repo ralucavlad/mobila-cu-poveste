@@ -50,9 +50,11 @@
   },
   "homepage": "https://github.com/ralucavlad/mobila-cu-poveste#readme",
   "dependencies": {
+    "bootstrap-icons": "^1.11.3",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "nodemon": "^3.1.9",
+    "pg": "^8.13.1",
     "sass": "^1.83.0",
     "sharp": "^0.33.5"
   }

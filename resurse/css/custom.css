@@ -15,6 +15,8 @@
   --bs-border-radius-xxl: 2.5rem;
   --bs-border-radius-pill: 50rem;
   --bs-body-font-family: "Lora", serif;
+  --bs-border-radius: 0.7rem !important;
+  --bs-border-width: 2px !important;
 }
 
 [data-bs-theme=dark] {
@@ -58,5 +60,6 @@ h6, .h6 {
 }
 
 button {
-  border-radius: 0.5rem;
+  border-radius: var(--btn-border-radius);
+  border-width: var(--btn-border-width);
 }

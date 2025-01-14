@@ -1,0 +1,39 @@
+:root {
+  --primary-dark-color: #121212;
+  --secondary-dark-color: #2c2c2c;
+  --footer-nav-color: #1e1e1e;
+  --font-color: #e0e0e0;
+  --auxiliary-color: #bb86fc;
+}
+
+#container-switch-tema .form-check.form-switch {
+  display: inline-block;
+}
+
+body.dark {
+  background-color: var(--primary-dark-color);
+  color: var(--font-color);
+}
+body.dark h1, body.dark h2, body.dark h3 {
+  color: var(--font-color);
+}
+body.dark footer, body.dark nav {
+  background-color: var(--footer-nav-color);
+}
+body.dark header {
+  background-color: var(--primary-dark-color);
+}
+body.dark a {
+  color: var(--auxiliary-color);
+}
+body.dark .form-check-input:checked {
+  background-color: var(--auxiliary-color);
+  border-color: var(--auxiliary-color);
+}
+body.dark #grid-pagina > *,
+body.dark #testimoniale, body.dark #resurse, body.dark #workshopuri {
+  background-color: var(--secondary-dark-color);
+}
+body.dark #testimoniale-resurse {
+  background-color: var(--primary-dark-color);
+}

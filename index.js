@@ -3,6 +3,19 @@ const path = require('path');
 const fs = require('fs');
 const sharp = require('sharp');
 const sass = require('sass');
+const pg = require('pg');
+
+const Client = pg.Client;
+
+let client = new Client({
+    database: "proiect",
+    user: "raluca",
+    password: "raluca",
+    host: "localhost",
+    port: 5432
+});
+
+client.connect();
 
 const app = express();
 
@@ -30,16 +43,53 @@ for (let folder of vectorFoldere) {
 
 app.use("/resurse", express.static(path.join(__dirname, "resurse")));
 
+// Trimit categoriile in toate paginile
+app.use((req, res, next) => {
+    client.query("SELECT * FROM unnest(enum_range(null::categ_mobila))", function(err, rezOptiuni) {
+        if (err) {
+            next(err);
+        } else {
+            res.locals.optiuni = rezOptiuni.rows;
+            next();
+        }
+    });
+});
+
 app.get("/favicon.ico", (_req, res) => {
     res.sendFile(path.join(__dirname, "resurse/imagini/ico/favicon.ico"));
 });
 
 app.get(["/","/index","/home"], (req, res) => {
-    res.render("pagini/index", { ip: req.ip, imagini:obGlobal.obImagini.imagini });
+    res.render("pagini/index", { ip: req.ip, imagini: obGlobal.obImagini.imagini });
 });
 
 app.get("/galerie", (req, res) => {
-    res.render("pagini/galerie", { imagini:obGlobal.obImagini.imagini });
+    res.render("pagini/galerie", { imagini: obGlobal.obImagini.imagini });
+});
+
+app.get("/produse", (req, res) => {
+    let conditieQuery = "";
+    if (req.query.tip) {
+        conditieQuery = ` WHERE categorie = '${req.query.tip}'`;
+    }
+    client.query(`SELECT * FROM mobila ${conditieQuery}`, function(err, rez) {
+        if (err) {
+            afisareEroare(res, 500);
+        } else {
+            res.render("pagini/produse", { produse: rez.rows });
+        }
+    });
+});
+
+app.get("/produs/:id", (req, res) => {
+    let idProdus = req.params.id;
+    client.query(`SELECT * FROM mobila WHERE id = ${idProdus}`, function(err, rez) {
+        if (err || rez.rows.length == 0) {
+            afisareEroare(res, 404, "Produs negasit", "Produsul cu id-ul specificat nu exista.");
+        } else {
+            res.render("pagini/produs", { prod: rez.rows[0] });
+        }
+    });
 });
 
 app.get(/^\/resurse\/[a-z0-9A-Z\/]*$/, (_req, res) => {
